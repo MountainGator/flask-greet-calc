@@ -23,14 +23,23 @@ def home():
     """
     return html
 
-@app.route('/<welcome>')
-def welcome(welcome):
-    return f"<h2>you reached the {welcome} page"
+@app.route('/welcome')
+def welcome():
+    return f"""
+    <h2>you reached the welcome page</h2>
+    <a href="/"><button>Home</button></a>
+    """
 
-@app.route('/welcome/<home>')
-def welcome_home(home):
-    return f"welcome {home} you filthy animal"
+@app.route('/welcome/home')
+def welcome_home():
+    return f"""
+    <h2>welcome home you filthy animal</h2>
+    <a href="/"><button>Home</button></a>
+    """
 
-@app.route('/welcome/<back>')
-def welcome_back(back):
-    return f"welcome {back}, you sly dog"
+@app.route('/welcome/back')
+def welcome_back():
+    return f"""
+    <h2>welcome back, you sly dog</h2>
+    <a href="/"><button>Home</button></a>
+    """
